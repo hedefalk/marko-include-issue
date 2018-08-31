@@ -1,0 +1,15 @@
+class {
+  onCreate() {
+    this.state = {
+      count: 0
+    }
+  }
+  increment() {
+    this.state.count++
+  }
+}
+
+include('./surround.marko')
+  @content
+    input-component onIncrement('increment')
+    output-component count=state.count
